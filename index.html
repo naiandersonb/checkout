@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="styles.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout</title>
+</head>
+<body class="container">
+  <div class="box">
+    <h1>Checkout</h1>
+    <h3>Nome do produto</h3>
+    <h4>Descrição</h4>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex excepturi eum minus ad architecto numquam accusamus officiis voluptatibus facilis magni deserunt libero, porro nulla neque ea esse repudiandae sequi debitis.</p>
+
+    <img src="https://i.pinimg.com/564x/9f/9c/7e/9f9c7ec50ae9040b6f3173d8253d433f.jpg" alt="teste">
+ 
+    <div style='display: flex; flex-direction: column; justify-content: center'>
+      <!-- <form method="post"></form> -->
+      <button id="tm-upsell" data-off="389e16f7-ed75-4696-a07b-1d944fc51bc0" data-prod="2f0b7e02-536c-449d-8f8e-ab96ad883599" onmouseover="this.style.opacity = '0.5'" onmouseout="this.style.opacity = '1'" style='background-color: #46D0D0; height: 2.5rem;padding: 0px 24px; border-radius: 10px; color: white; font-size: 16px; font-weight: 700; font-family: Poppins, sans-serif; border:none; max-width: 500px; transition: 0.3s; cursor: pointer;'>Sim, eu aceito essa super oferta!</button>
+      <button id="tm-upsell-cancel" onmouseover="this.style.opacity = '0.5'" onmouseout="this.style.opacity = '1'"  style='height: 2.5rem;padding: 0px 24px; border-radius: 10px; color: black; text-decoration: underline; font-size: 12px; font-family: Poppins, sans-serif; border:none; background-color: transparent; max-width: 500px; transition: 0.3s; cursor: pointer;'>Não, eu gostaria de recusar essa oferta</button>
+    </div>
+  </div>
+
+  <script src="/script.min.js"></script>
+
+
+  <!-- <script>
+    const buttonUpsell = document.getElementById('tm-upsell');
+    const buttonCancelUpsell = document.getElementById('tm-upsell-cancel');
+    const tokenUrl = 'http://127.0.0.1:5500/index.html?token=2xc2xtf223x2t3x2y2uboo3';
+    // const tokenUrl = window.location.href;
+
+    
+    buttonUpsell.addEventListener('click', async () => {
+      const offer_id = buttonUpsell.dataset.off;
+      const product_id = buttonUpsell.dataset.prod;
+
+      const urlSplit = tokenUrl.split('?token=');
+      const token = urlSplit[1];
+
+      console.log({offer_id, product_id, token})
+
+      const data = {
+        offer_id,
+        product_id,
+        token
+      }
+
+      await axios.post('/link/post', data)
+      .then(res => console.log({res}))
+      .catch(err=> console.log({err}));
+
+    })
+    
+    buttonCancelUpsell.addEventListener('click', () => {
+      console.log('cancel upsell');
+    })
+  </script> -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
+
+</body>
+</html>
