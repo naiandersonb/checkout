@@ -17,7 +17,7 @@ buttonUpsell.addEventListener('click', async () => {
     customer_id,
     product_id,
   })
-  console.log({ data })
+  console.log(JSON.parse(data))
 
   // alert(JSON.stringify(data, null, 2))
   await fetch('https://v1.themembers.dev.br/api/checkout/upsell', {
