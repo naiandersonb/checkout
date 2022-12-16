@@ -1,6 +1,6 @@
 const buttonUpsell = document.getElementById('tm-upsell');
 const buttonCancelUpsell = document.getElementById('tm-upsell-cancel');
-const tokenUrl = window.location.href;
+// const tokenUrl = window.location.href;
 const params = new URLSearchParams(window.location.search);
 
 
@@ -9,7 +9,6 @@ buttonUpsell.addEventListener('click', async () => {
   const product_id = buttonUpsell.dataset.prod;
   const user_id = params.get("user_id");
   const customer_id = params.get("customer_id");
-  // const token = params.get("token");
 
   const data = JSON.stringify({
     offer_id,
@@ -19,10 +18,12 @@ buttonUpsell.addEventListener('click', async () => {
   })
   console.log(JSON.parse(data))
 
-  // alert(JSON.stringify(data, null, 2))
   await fetch('https://v1.themembers.dev.br/api/checkout/upsell', {
     method: 'POST',
-    body: data
+    body: data,
+    headers: {
+      "Content-type": "application/json; charset=UTF-8"
+    }
   })
     .then(res => res.json()).then(res => console.log({ res }))
     .catch(err => console.log({ err }));
