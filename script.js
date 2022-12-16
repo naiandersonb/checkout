@@ -20,7 +20,12 @@ buttonUpsell.addEventListener('click', async () => {
 
   await fetch('https://v1.themembers.dev.br/api/checkout/upsell', {
     method: 'POST',
-    body: data,
+    body: JSON.stringify({
+      offer_id,
+      user_id,
+      customer_id,
+      product_id,
+    }),
     headers: {
       "Content-type": "application/json; charset=UTF-8"
     }
